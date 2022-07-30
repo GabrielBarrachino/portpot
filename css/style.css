@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #292935;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+                            /*========================== MENU HEADER ==========================*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.4rem 10%;
+    z-index: 1000;
+    border-bottom: 1px solid #6DB0FF;
+    background-color: #2a2a35;
+}
+
+.logo-site{
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo-site span{
+    font-size: 2.3rem;
+    color: #6DB0FF;
+}
+
+.menu-header{
+    display: flex;
+    gap: 28px;
+}
+
+.menu-item{
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.menu-item:hover{
+    color: #6DB0FF;
+}
+
+
+/*========================== BOTÃO RESPONSIVO ==========================*/
+input[type="checkbox"]{
+    display: none;
+}
+
+.menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+                    /*========================== RESPONSIVIDADE MENU HEADER ==========================*/
+@media (max-width: 1000px){
+    header{
+      padding: 0 40px 0 50px;
+    }
+  }
+  
+@media (max-width: 920px) {
+    .menu-btn i{
+      display: block;
+    }
+    
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+
+    .menu-header{
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      background: #2a2a35;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      transition: all 0.3s ease;
+      border-top: 1px solid #6DB0FF;
+    }
+
+    #click:checked ~ .menu-header{
+      left: 0;
+    }
+    
+    .menu-item{
+      margin-top: 40px;  
+      width: 100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    #click:checked ~ .menu-item{
+      margin-left: 0px;
+    }
+
+    .menu-item.active,
+    .menu-item:hover{
+      background: none;
+      color: #6DB0FF;
+    }
+}
+                  /*========================== FIM RESPONSIVIDADE MENU HEADER ==========================*/
+
+                  /*========================== FIM MENU HEADER ==========================*/
+
+
+
+                  /*========================== INICIO HOME ==========================*/
+
+.section-home{
+  padding-top: 120px;
+  margin-bottom: -140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.main-home p{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6DB0FF;
+}
+
+.main-home p span{
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #a0a0a8;
+}
+
+.main-home h1{
+  padding: 30px 0 60px 0;
+  font-size: 3.3rem;
+  color: #6DB0FF;
+  letter-spacing: 2px;
+}
+
+.main-home h1 span{
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.main-home .btn-contact{
+  background: linear-gradient(to right, #0075FE, #5fa9fd);
+  padding: 14px 23px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.main-home .btn-contact:hover{
+  padding: 17px 26px;
+  background: linear-gradient(to right, #5fa9fd, #0075FE);
+}
+
+.main-home .btn-down{
+  color: #a0a0a8;
+  padding: 14px 23px;
+  border: 2px solid #6DB0FF;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: .3s;
+  margin-left: 30px;
+} 
+
+.main-home .btn-down:hover{
+  background-color: #6DB0FF;
+  color: #2B2929;
+} 
+
+
+.div-img img{
+  width: 32vw;
+  cursor: pointer;
+  animation: float 3s linear infinite;
+}
+
+@keyframes float{
+  0%, 100%{
+      transform: translateY(0rem);
+  }
+
+  50%{
+      transform: translateY(-2.5rem);
+  }
+}
+
+@media (max-width: 920px){
+  .section-home {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6rem;
+    text-align: center
+  }
+
+  .section-home p span{
+    font-size: .9rem;
+  }
+
+  .botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .btn-contact{
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .btn-down{
+    width: 90%;
+    margin-left: 0 !important;
+  }
+
+  .div-img img{
+    width: 78%;
+  }
+}
+
+
+@media (max-width: 420px){
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-site{
+    margin-right: 195px;
+    margin-left: -45px;
+  }
+
+  .section-home {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6rem;
+    text-align: center
+  }
+
+  .section-home p span{
+    font-size: .8rem;
+  }
+
+  .botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: -20px;
+  }
+
+  .btn-contact{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .btn-down{
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .div-img img{
+    width: 74%;
+  }
+}
+
+@media (max-width: 1000px){
+  .section-home{
+    padding: 8rem 0 0 30px;
+  }
+}
+
+@media (max-width: 1200px){
+  .section-home{
+    padding: 8rem 0 0 30px;
+  }
+
+  header{
+    padding: 0 0 0 55px;
+  }
+}
+
+
+
+                    /*========================== FIM HOME ==========================*/
+
+
+
+.section-sobre{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-sobre img{
+  width: 500px; 
+  height: 500px;
+  margin-right: 60px;
+}
+
+.sobre-mim{
+  margin-bottom: 6rem;
+  line-height: 34px;
+  padding-left: 8px;
+  color: #a0a0a8;
+  font-size: 1.2rem;
+  border-left: 4px solid #6DB0FF;
+}
+
+.titulo-sobre{
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.6rem;
+}
+
+.text-sobre{
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding-bottom: 7px;
+  color: #a0a0a8;
+}
+
+.text-sobre span{
+  color: #6DB0FF;
+}
+
+.text-sobre-dois{
+  padding-bottom: 3.6rem;
+}
+
+
+
+
+
+@media (max-width: 920px){
+  .section-sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4rem 6rem;
+  }
+}
+
+
+@media (max-width: 420px){
+  .section-sobre {
+    padding: 4rem 6rem;
+  }
+
+  .sobre-mim{
+    margin: 40px 0 30px 0;
+  }
+
+
+  .img-sobre img{
+    width: 300px;
+    height: 300px;
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 1000px){
+  .section-home{
+    padding: 8rem 0 0 30px;
+  }
+}
+
+@media (max-width: 1200px){
+  .section-home{
+    padding: 8rem 0 0 30px;
+  }
+
+  header{
+    padding: 0 0 0 55px;
+  }
+}
